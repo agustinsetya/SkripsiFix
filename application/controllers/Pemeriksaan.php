@@ -79,9 +79,4 @@ class Pemeriksaan extends CI_Controller {
         }
         $pdf->Output();
     }
-
-    public function FunctionName($value='')
-    {
-    	# com mjkkjnkjnjknkjnkjnkjnkjdehbhbjhbjhbjhbjhbhj...
-    }
 }
