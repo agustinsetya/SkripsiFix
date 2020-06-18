@@ -82,6 +82,6 @@ class Pemeriksaan extends CI_Controller {
 
     public function FunctionName($value='')
     {
-    	# codehbhbjhbjhbjhbjhbhj...
+    	# com mjkkjnkjnjknkjnkjnkjnkjdehbhbjhbjhbjhbjhbhj...
     }
 }
