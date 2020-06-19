@@ -27,6 +27,23 @@ class M_Users extends CI_Model {
         return $hasil;
     }
 
+    public function updateProfile($id){
+		$data = array(
+			'username'=>$this->input->post('username'),
+			'nama'=>$this->input->post('nama'),
+			'alamat'=>$this->input->post('alamat'),
+			'noWa'=>$this->input->post('noWa')
+		);
+		$data = $this->input->post();
+		//mengeset where id=$id
+		$this->db->where('id_users',$id);
+		/*eksekusi update product set $data from product where id=$id
+		jika berhasil return berhasil */
+		if($this->db->update("users",$data)){
+			return "Berhasil";
+		}
+	}
+
 	function hapus($where,$table){
 		$this->db->where($where);
 		$this->db->delete($table);

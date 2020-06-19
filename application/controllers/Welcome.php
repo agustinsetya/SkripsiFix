@@ -45,10 +45,10 @@ class Welcome extends CI_Controller {
 
 	function aksi_login()
 	{
-		$username=$this->input->post('email');
+		$username=$this->input->post('username');
 		$password=$this->input->post('password');
 		$cek=$this->M_Welcome->cek_login($username,$password);
-		$tes=count($cek);
+		$tes=count((array)$cek);
 		if ($tes > 0 ) 
 		{
 			$data_login=$this->M_Welcome->cek_login($username,$password);
@@ -57,13 +57,13 @@ class Welcome extends CI_Controller {
 			$alamat=$data_login->alamat;
 			$id=$data_login->id_users;
 			$nowa=$data_login->noWa;
-			$username=$data_login->email;
+			$username=$data_login->username;
 			$data=array('level' => $level,
 				'nama' => $nama,
 				'alamat' => $alamat,
 				'id_users' => $id,
 				'noWa' => $nowa,
-				'email' => $username);
+				'username' => $username);
 			$this->session->set_userdata($data);
 			
 			if ($level=='Admin')
@@ -78,7 +78,7 @@ class Welcome extends CI_Controller {
 		}
 		else
 		{
-			echo "<script>alert('Email atau Password yang Anda Masukan Salah !!!');history.go(-1);</script>";
+			echo "<script>alert('Username atau Password salah!!');history.go(-1);</script>";
 		}
 	}
 

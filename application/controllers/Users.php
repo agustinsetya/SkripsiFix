@@ -58,6 +58,13 @@ class Users extends CI_Controller {
 		$this->load->view('admin/menu',$data);
 	}
 
+	public function updateProfile($id)
+	{
+		$this->M_Users->updateProfile($id);
+		$this->session->set_flashdata('success','Profile Berhasil Diubah');
+		redirect('Users/editProfil/'.$this->session->userdata('id_users'),'refresh');
+	}
+
 	function hapus_user($id){
 		$where = array('id_users' => $id);
 		$this->M_Users->hapus($where,'users');

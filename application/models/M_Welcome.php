@@ -26,7 +26,7 @@ class M_Welcome extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('users');
-		$this->db->where('email',$username);
+		$this->db->where('username',$username);
 		$this->db->where('password',md5($password));
 		return $this->db->get()->row();
 	}
