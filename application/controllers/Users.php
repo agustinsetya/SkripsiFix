@@ -42,28 +42,42 @@ class Users extends CI_Controller {
 	public function simpanUser()
 	{
 		$nama=$this->input->post('nama');
-        $email=$this->input->post('email');
+        $username=$this->input->post('username');
         $password=$this->input->post('password');
         $alamat=$this->input->post('alamat');
         $noWa=$this->input->post('noWa');
         $level=$this->input->post('level');
         $this->session->set_flashdata('success','Tambah User berhasil');
-        $this->M_Users->inputdata($nama,$email,$password,$alamat,$noWa,$level);
+        $this->M_Users->inputdata($nama,$username,$password,$alamat,$noWa,$level);
         redirect('Users');
 	}
 
-	public function editProfil($id){
-		$data['user']= $this->M_Users->getUserId($id);
+	public function editProfil(){
+		$data['user']= $this->M_Users->getUserId();
 		$data['page']='editProfile.php';
 		$this->load->view('admin/menu',$data);
 	}
 
-	public function updateProfile($id)
+	public function updateProfile()
 	{
-		$this->M_Users->updateProfile($id);
-		$this->session->set_flashdata('success','Profile Berhasil Diubah');
-		redirect('Users/editProfil/'.$this->session->userdata('id_users'),'refresh');
+		$data['username'] = set_value('username');
+	    $data['nama'] = set_value('nama');
+	    $data['alamat'] = set_value('alamat');
+	    $data['noWa'] = set_value('noWa');
+	    $this->session->set_userdata($data);
+	    $this->M_Users->updateProfile($data); //memasukan data ke database
+	    $this->session->set_flashdata('success','Profile Berhasil Diubah');
+	    redirect('Users/editProfil'); //mengalihkan halaman
 	}
+
+	function ubahpass(){
+        $data = array(
+            'password'		=>md5($this->input->post('password'))
+        );
+        $this->M_Users->ubahpassword($data);
+        $this->session->set_userdata($data);
+        redirect('Users/editProfil');
+    }
 
 	function hapus_user($id){
 		$where = array('id_users' => $id);

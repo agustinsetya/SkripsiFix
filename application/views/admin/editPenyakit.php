@@ -31,7 +31,7 @@
           </div>
           <div class="page-header">
             <input type="submit" class="btn btn-success" value="EDIT">&nbsp;&nbsp;
-            <a href="<?php echo base_url()?>Penyakit/DataPenyakit"><button type="button" class="btn btn-danger">KEMBALI</button></a>
+            <a href="<?php echo base_url()?>Penyakit"><button type="button" class="btn btn-danger">KEMBALI</button></a>
           </div>
           <?php echo form_close(); ?>
         <?php } ?>

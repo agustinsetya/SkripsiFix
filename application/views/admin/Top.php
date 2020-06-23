@@ -11,8 +11,8 @@
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
-            <li><a href="<?php echo base_url('Users/editProfil/'.$this->session->userdata('id_users'));?>"><i class="fa fa-user pull-right"></i> Edit Profil</a></li>
-            <li><a href="<?php echo base_url();?>Welcome/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+            <li><a href="<?php echo base_url();?>Users/editProfil"><i class="fa fa-user pull-right"></i> Edit Profil</a></li>
+            <li><a href="<?php echo base_url();?>Welcome/logout"><i class="fa fa-sign-out-alt pull-right"></i> Log Out</a></li>
           </ul>
         </li>
       </ul>

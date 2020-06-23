@@ -5,17 +5,25 @@
       <div class="col-md-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Consultation Report</h2>
+            <h2>Hallo, <?php echo $this->session->userdata("nama");?> <i class="far fa-laugh-beam" style="font-size:24px;"></i></h2>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
             <div class="col-md-9 col-sm-9  ">
               <ul class="stats-overview">
                 <li>
-                  <span class="name"> Total Penyakit </span>
+                  <span class="name"> Total Pemeriksaan </span>
                   <span class="value text-success">
-                    <?php foreach($totalPenyakit as $tampilPenyakit) { ?>
-                      <span><?php echo $tampilPenyakit->total ?></span> </a>
+                    <?php foreach($totalPemeriksaan as $tampilPemeriksaan) { ?>
+                      <span><?php echo $tampilPemeriksaan->total ?></span> </a>
+                    <?php } ?>
+                  </span>
+                </li>
+                <li class="hidden-phone">
+                  <span class="name"> Total Pemeriksaan yang Perlu Direvisi </span>
+                  <span class="value text-success">
+                    <?php foreach($totalRevisi as $tampilRevisi) { ?>
+                      <span><?php echo $tampilRevisi->total ?></span> </a>
                     <?php } ?>
                   </span>
                 </li>
@@ -27,23 +35,20 @@
                     <?php } ?>
                   </span>
                 </li>
-                <li class="hidden-phone">
-                  <span class="name"> Total Data Pemeriksaan </span>
-                  <span class="value text-success">
-                    <?php foreach($totalPemeriksaan as $tampilPemeriksaan) { ?>
-                      <span><?php echo $tampilPemeriksaan->total ?></span> </a>
-                    <?php } ?>
-                  </span>
-                </li>
               </ul><br/>
 
-              <div class="x_content">
+              <!-- <div class="x_content">
                 <canvas id="mybarChart"></canvas>
-              </div><br><br>
+              </div> -->
+
+              <div class="x_content" style="text-align: center;">
+                <img src="<?php echo base_url();?>Gambar/hd2.gif" class="img-fluid" alt="hd" height="400px" />
+              </div>
+              <br><br>
               
               <div id="mainb" style="height:350px;"></div>
               <div>
-                <h4><i class="fa fa-comments-o"></i> Kritik dan Saran</h4>
+                <h4><i class="fa fa-comments"></i> Kritik dan Saran</h4>
                 <!-- end of user messages -->
                 <?php 
                 foreach ($komen as $key) {
@@ -66,6 +71,7 @@
                       </div>
 
 
+
                     </div>
 
                     <!-- start project-detail sidebar -->
@@ -78,10 +84,23 @@
                           <div class="clearfix"></div>
                         </div>
                         <div class="panel-body">
-                          <h3 class="pink"><i class="fa fa-female"></i> Report</h3>
+                          <h3 class="pink"><i class="fa fa-female"></i> Women's Solution</h3>
 
-                          <p>Pada grafik disamping menampilkan banyaknya jumlah pasien dengan diagnosis hasil pemeriksaan berdasarkan penyakitnya.</p>
+                          <p>Sistem Pakar untuk Diagnosis Penyakit pada Organ Genitalia Wanita</p>
                           <br />
+                        </div>
+
+                        <div class="panel-body">
+                          <h3 class="pink"><i class="fas fa-chalkboard-teacher"></i> Helpdesc</h3>
+
+                          <p>Informasi mengenai cara mengoperasikan sistem informasi ini :</p>
+                          <p><a href="<?php echo base_url();?>Home"><i class="fa fa-home"></i> Menu Home</a></p>
+                          <p><a href="<?php echo base_url();?>Users"><i class="fa fa-user-md"></i> Menu User</a></p>
+                          <p><a href="<?php echo base_url();?>Gejala"><i class="fa fa-wpforms"></i> Menu Data Gejala </a></p>
+                          <p><a href="<?php echo base_url();?>Gejala"><i class="fa fa-desktop"></i> Menu Penyakit </a></p>
+                          <p><a href="<?php echo base_url();?>Pemeriksaan"><i class="fa fa-stethoscope"></i> Data Hasil Pemeriksaan </a></p>
+                          <br />
+                        </div>
                       </section>
 
                     </div>

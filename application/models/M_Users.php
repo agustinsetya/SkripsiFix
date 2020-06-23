@@ -13,36 +13,33 @@ class M_Users extends CI_Model {
 		return $query->result();
 	}
 
-	public function getUserId($id)
+	public function getUserId()
 	{
-		$this->db->select('*');
-		$this->db->from('users');
-		$this->db->where('id_users',$id);
-		$query = $this->db->get();
+		$id_users=$this->session->userdata['id_users'];
+		$level=$this->session->userdata['level'];
+		$query = $this->db->query("Select * from users where id_users='$id_users' and level='$level'");
 		return $query->result();
 	}
 
-	function inputData($nama,$email,$password,$alamat,$noWa,$level){
-        $hasil=$this->db->query("INSERT INTO users (nama, email, password, alamat, noWa, level) VALUES ('$nama','$email',md5('$password'),'$alamat','$noWa','$level')");
+	function inputData($nama,$username,$password,$alamat,$noWa,$level){
+        $hasil=$this->db->query("INSERT INTO users (nama, username, password, alamat, noWa, level) VALUES ('$nama','$username',md5('$password'),'$alamat','$noWa','$level')");
         return $hasil;
     }
 
-    public function updateProfile($id){
-		$data = array(
-			'username'=>$this->input->post('username'),
-			'nama'=>$this->input->post('nama'),
-			'alamat'=>$this->input->post('alamat'),
-			'noWa'=>$this->input->post('noWa')
-		);
-		$data = $this->input->post();
-		//mengeset where id=$id
-		$this->db->where('id_users',$id);
-		/*eksekusi update product set $data from product where id=$id
-		jika berhasil return berhasil */
-		if($this->db->update("users",$data)){
-			return "Berhasil";
-		}
+    public function updateProfile($data){
+		try{
+    		$id_users=$this->session->userdata['id_users'];
+	      	$this->db->where('id_users',$id_users)->limit(1)->update('users', $data);
+	      	return true;
+	    }catch(Exception $e){}
 	}
+
+	function ubahpassword($data){
+		$id_users=$this->session->userdata['id_users'];
+        $this->db->where('id_users',$id_users);
+        $this->db->update('users', $data);
+        return TRUE;
+    }
 
 	function hapus($where,$table){
 		$this->db->where($where);

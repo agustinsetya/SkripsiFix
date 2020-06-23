@@ -82,8 +82,8 @@
           <div class="form-group">
             <label class="control-label col-xs-3" >Penyakit</label>
             <div class="col-sm-8">
-              <select class='form-control' id='exampleFormControlSelect2' name='id_penyakit'>
-                <option>-- Pilih Penyakit --</option>
+              <select class='form-control' id='exampleFormControlSelect2' name='id_penyakit' required>
+                <option value="">-- Pilih Penyakit --</option>
                 <?php foreach ($penyakitKasus as $key) {
                   echo "<option value=".$key->id_penyakit.">".$key->nm_penyakit."</option>";
                 }?>
@@ -119,8 +119,8 @@
           <div class="form-group">
             <label class="control-label col-xs-3" >Penyakit</label>
             <div class="col-sm-8">
-              <select class='form-control' id='exampleFormControlSelect2' name='fk_penyakit'>
-                <option>-- Pilih Penyakit--</option>
+              <select class='form-control' id='exampleFormControlSelect2' name='fk_penyakit' required>
+                <option value="">-- Pilih Penyakit--</option>
                 <?php foreach ($penyakitKasus as $a) {
                   echo '<option value="'.$a->id_penyakit.'" ';
                   if ($key->fk_penyakit==$a->id_penyakit)

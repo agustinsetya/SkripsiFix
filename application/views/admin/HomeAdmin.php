@@ -5,7 +5,7 @@
       <div class="col-md-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Consultation Report</h2>
+            <h2>Hallo, <?php echo $this->session->userdata("nama");?> <i class="far fa-laugh-beam" style="font-size:24px;"></i></h2>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
@@ -37,13 +37,18 @@
                 </li>
               </ul><br/>
 
-              <div class="x_content">
+              <!-- <div class="x_content">
                 <canvas id="mybarChart"></canvas>
-              </div><br><br>
+              </div> -->
+
+              <div class="x_content" style="text-align: center;">
+                <img src="<?php echo base_url();?>Gambar/hd2.gif" class="img-fluid" alt="hd" height="400px" />
+              </div>
+              <br><br>
               
               <div id="mainb" style="height:350px;"></div>
               <div>
-                <h4><i class="fa fa-comments-o"></i> Kritik dan Saran</h4>
+                <h4><i class="fa fa-comments"></i> Kritik dan Saran</h4>
                 <!-- end of user messages -->
                 <?php 
                 foreach ($komen as $key) {
@@ -79,10 +84,19 @@
                           <div class="clearfix"></div>
                         </div>
                         <div class="panel-body">
-                          <h3 class="pink"><i class="fa fa-female"></i> Report</h3>
+                          <h3 class="pink"><i class="fa fa-female"></i> Women's Solution</h3>
 
-                          <p>Pada grafik disamping menampilkan banyaknya jumlah pasien dengan diagnosis hasil pemeriksaan berdasarkan penyakitnya.</p>
+                          <p>Sistem Pakar untuk Diagnosis Penyakit pada Organ Genitalia Wanita</p>
                           <br />
+                        </div>
+
+                        <div class="panel-body">
+                          <h3 class="pink"><i class="fas fa-chalkboard-teacher"></i> Helpdesc</h3>
+
+                          <p>Anda bingung dalam mengoperasikan sistem ini ? Anda bisa klik link dibawah ini untuk melihat tutorialnya :</p>
+                          <p><a href="<?php echo base_url();?>Home"><i class="fa fa-book-reader"></i> Lihat Petunjuk Penggunaan</a></p>
+                          <br />
+                        </div>
                       </section>
 
                     </div>

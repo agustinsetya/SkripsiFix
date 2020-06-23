@@ -37,8 +37,8 @@
           <div class="form-group row">
             <label class="control-label col-xs-3" >Jenis Penyakit</label>
             <div class="col-sm-8">
-              <select class='form-control' id='exampleFormControlSelect2' name='fk_penyakit'>
-                <option>-- Pilih Jenis Penyakit--</option>
+              <select class='form-control' id='exampleFormControlSelect2' name='fk_penyakit' required>
+                <option value="">-- Pilih Jenis Penyakit--</option>
                 <?php foreach ($penyakitKasus as $a) {
                   echo '<option value="'.$a->id_penyakit.'" ';
                   if ($key->fk_penyakit==$a->id_penyakit)
@@ -72,8 +72,8 @@
               <td><input type="hidden" name="fk_gejala[]" value="<?php echo $key->fk_gejala ?>"><?php echo $key->nm_gejala;?></td>
               <!-- <td><?php echo $key->bobot;?></td> -->
               <td>
-                <select class='form-control' id='exampleFormControlSelect2' name='bobot[]'>
-                <option>-- Bobot Gejala pada Penyakit --</option>
+                <select class='form-control' id='exampleFormControlSelect2' name='bobot[]' required>
+                <option value="">-- Bobot Gejala pada Penyakit --</option>
                 <option value="1">1 - Biasa</option>
                 <option value="3">3 - Sedang</option>
                 <option value="5">5 - Dominan</option>

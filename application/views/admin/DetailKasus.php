@@ -13,8 +13,8 @@
           <div class="form-group row">
             <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Nama Gejala</label>
             <div class="col-sm-8">
-              <select class='form-control' id='exampleFormControlSelect2' name='id_gejala'>
-                <option>-- Pilih Gejala --</option>
+              <select class='form-control' id='exampleFormControlSelect2' name='id_gejala' required>
+                <option value="">-- Pilih Gejala --</option>
                 <?php foreach ($gejalaKasus as $key) {
                   echo "<option value=".$key->id_gejala.">".$key->nm_gejala."</option>";
                 }?>
@@ -24,8 +24,8 @@
           <div class="form-group row">
             <label for="bobot" class="col-sm-3 col-form-label"> Bobot </label>
             <div class="col-sm-8">
-              <select class='form-control' id='exampleFormControlSelect2' name='bobot'>
-                <option>-- Bobot Gejala pada Penyakit --</option>
+              <select class='form-control' id='exampleFormControlSelect2' name='bobot' required>
+                <option value="">-- Bobot Gejala pada Penyakit --</option>
                 <option value="1">1 - Biasa</option>
                 <option value="3">3 - Sedang</option>
                 <option value="5">5 - Dominan</option>

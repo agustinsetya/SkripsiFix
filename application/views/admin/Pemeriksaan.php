@@ -11,7 +11,7 @@
           <p>- Status <b><em>Diperiksa Dengan Revisi</em></b>, Jika kasus baru hanya memiliki hasil presentase kurang dari 50%, sudah diperiksa dan direvisi oleh pakar karena tepat untuk dijadikan solusi baru dari kasus selanjutnya</p>
           <div class="clearfix"></div>
         </div>
-        <div class="pull-right"><a href="<?php echo base_url(). "Cetak"; ?>"><button class="btn btn-warning"></span> PDF </button></a></div><br><br><br>
+        <div class="pull-right"><a href="<?php echo base_url(). 'Pemeriksaan/cetakPdf'; ?>"><button class="btn btn-warning"></span> PDF </button></a></div><br><br><br>
           <table class="table table-striped table-bordered data">
             <thead>
               <tr class="bg-group">

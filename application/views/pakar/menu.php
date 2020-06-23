@@ -11,9 +11,9 @@
     <title>Women's Solution</title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo base_url();?>/vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?php echo base_url();?>/vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendors/font-awesome/css/font-awesome.css" rel="stylesheet">
    
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assetsDatatables/media/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assetsDatatables/media/css/dataTables.bootstrap.css">
@@ -21,7 +21,7 @@
 
     
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url();?>/build/css/custom.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>build/css/custom.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -44,21 +44,21 @@
     </div>
 
     <!-- jQuery -->
-    <script src="<?php echo base_url();?>/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="<?php echo base_url();?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Chart.js -->
     <script src="<?php echo base_url();?>vendors/Chart.js/dist/Chart.min.js"></script>
     
     <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/media/js/jquery2.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/media/js/jquery.dataTables.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/datatables.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables\assets_ajax\js/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables\assets_ajax\js/bootstrap.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables\assets_ajax\js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/assets_ajax/js/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/assets_ajax/js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/assets_ajax/js/jquery.dataTables.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="<?php echo base_url();?>/build/js/custom.min.js"></script>
+    <script src="<?php echo base_url();?>build/js/custom.min.js"></script>
 
 
   </body>

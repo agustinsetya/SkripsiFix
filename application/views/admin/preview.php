@@ -49,6 +49,6 @@
  <?php }?> 
 </table> 
 
-<p style="text-align: center"><button type="submit" class="btn btn-success"><a href="<?php echo site_url('Cetak/cetakpdf')?>">Cetak PDF</a></p> 
+<p style="text-align: center"><button type="submit" class="btn btn-success"><a href="<?php echo site_url('Pemeriksaan/cetakpdf')?>">Cetak PDF</a></p> 
 </body> 
 </html>

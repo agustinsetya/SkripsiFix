@@ -13,9 +13,9 @@ class M_Pakar extends CI_Model {
 		return $query->result();
 	}
 
-	public function countPenyakit()
+	public function countRevisi()
 	{
-		$query = $this->db->query("SELECT COUNT(id_penyakit) AS total FROM penyakit");
+		$query = $this->db->query("SELECT COUNT(id_pemeriksaan) AS total FROM pemeriksaan WHERE status='2'");
 		return $query->result();
 	}
 

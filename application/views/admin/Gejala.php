@@ -48,7 +48,7 @@
                   <td><?php echo $key->nm_gejala;?></td>
                   <td>
                     <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modal_edit<?=$key->id_gejala;?>"><span class="glyphicon glyphicon-edit"></span></a>
-                    <a href="<?= base_url() ?>Gejala/hapusGejala/<?= $key->id_gejala?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></button>
+                    <a href="<?= base_url() ?>Gejala/hapusGejala/<?= $key->id_gejala?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Ingin Menghapus Data : <?=$key->nm_gejala;?> ?');"><span class="glyphicon glyphicon-trash"></span></a></button>
                   </td>
                 </tr>
               <?php

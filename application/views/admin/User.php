@@ -38,7 +38,7 @@
             <tr class="bg-group">
               <th width="5px">NO</th>
               <th>Nama</th>
-              <th>Email</th>
+              <th>Username</th>
               <th>Alamat</th>
               <th>No.Telepon</th>
               <th>Level</th>
@@ -54,12 +54,12 @@
             <tr>
               <td><?php echo $i; ?></td>
               <td><?php echo $key->nama;?></td>
-              <td><?php echo $key->email;?></td>
+              <td><?php echo $key->username;?></td>
               <td><?php echo $key->alamat;?></td>
               <td><?php echo $key->noWa;?></td>
               <td><?php echo $key->level;?></td>
               <td>
-                <a href="<?= base_url() ?>Users/hapus_user/<?= $key->id_users?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="<?= base_url() ?>Users/hapus_user/<?= $key->id_users?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Ingin Menghapus Data : <?=$key->nama;?> ?');"><span class="glyphicon glyphicon-trash"></span></a>
               </td>
             </tr>
             <?php
@@ -93,9 +93,9 @@
         </div>
         <div class="modal-body">
           <div class="form-group">
-            <label class="control-label col-xs-3" >Email</label>
+            <label class="control-label col-xs-3" >Username</label>
             <div class="col-xs-8">
-              <input name="email" class="form-control" type="email" placeholder="Email" required>
+              <input name="username" class="form-control" type="username" placeholder="Username" required>
             </div>
           </div>
         </div>
@@ -127,8 +127,8 @@
           <div class="form-group">
             <label class="control-label col-xs-3" >Level</label>
             <div class="col-xs-8">
-              <select class='form-control' id='exampleFormControlSelect2' name='level'>
-                <option>-- Level User --</option>
+              <select class='form-control' id='exampleFormControlSelect2' name='level' required>
+                <option value="">-- Level User --</option>
                 <option value="Admin">Admin</option>
                 <option value="Pakar">Pakar</option>
               </select>
@@ -144,6 +144,10 @@
   </div>
 </div>
 <!--END MODAL ADD-->
+
+<!-- jaga-jaga script agar modal atau pop up dapat muncul -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
 
 <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/assets_ajax/js/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assetsDatatables/assets_ajax/js/bootstrap.js"></script>

@@ -37,7 +37,7 @@
                   <td><?php echo $i; ?></td>
                   <td><?php echo $key->komen;?></td>
                   <td>
-                    <a href="<?= base_url() ?>Home/hapus_komentar/<?= $key->id_komen?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                    <a href="<?= base_url() ?>Home/hapus_komentar/<?= $key->id_komen?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Ingin Menghapus Data Komentar Ini ?');"><span class="glyphicon glyphicon-trash"></span></a>
                   </td>
                 </tr>
               <?php

@@ -53,6 +53,8 @@ class Penyakit extends CI_Controller {
 //        jika anda mau, anda bisa mengatur tampilan pesan error dengan menambahkan element dan css nya
 		$this->form_validation->set_error_delimiters('<div style="color:red; margin-bottom: 5px">', '</div>');
 		$this->form_validation->set_rules('nm_penyakit', 'Nama Penyakit', 'required');
+		$this->form_validation->set_rules('detail', 'Detail Penyakit', 'required');
+		$this->form_validation->set_rules('solusi', 'Solusi Penyakit', 'required');
 
 		if($this->form_validation->run()==FALSE){
 			$data['page']='addPenyakit.php';

@@ -66,24 +66,9 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mx-auto text-center">
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url()?>Welcome">Home
-							<span class="sr-only">(current)</span>
+						<a class="nav-link" href="<?php echo base_url()?>Welcome">
+							<span class="fa fa-home" style="font-size:40px;"></span>
 						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url()?>Welcome">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url()?>Welcome/Penyakit/">Penyakit</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url()?>Welcome">Tips Kesehatan</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url()?>Welcome/Konsultasi/">Konsultasi</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo base_url()?>Welcome">Saran & Kritik</a>
 					</li>
 				</ul>
 			</div>
@@ -223,7 +208,8 @@
             </tbody>
         </table>
         <div class="agileinfo_mail_grid_right submit-buttons text-center">
-			<input type="submit" value="PDF"></span>
+			<!-- <input type="submit" value="PDF"></input> -->
+			<a href="<?php echo base_url(). 'Welcome/cetakKonsultasi'; ?>"> PDF </a>
 		</div>
 	</div>
 </section>
@@ -248,8 +234,8 @@
 					<div class="col-md-6 align-self-center">
 						<form action="<?php echo base_url("Welcome/aksi_login"); ?>" method="post">
 							<div class="form-group">
-								<label for="email" class="col-form-label">Your Email</label>
-								<input type="email" class="form-control" placeholder=" " name="email" id="email" required="">
+								<label for="username" class="col-form-label">Username</label>
+								<input type="text" class="form-control" placeholder=" " name="username" id="username" required="">
 							</div>
 
 							<div class="form-group">
