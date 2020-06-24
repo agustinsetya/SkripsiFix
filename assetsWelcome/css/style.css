@@ -12,6 +12,11 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+.class1
+{
+     color: orange;
+}
+
 body a {
     text-decoration: none;
     transition: 0.5s all;

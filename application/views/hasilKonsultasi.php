@@ -29,6 +29,26 @@
 	<!-- google fonts -->
 	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
 	<!-- //google fonts -->
+
+	<script type="text/javascript" src="jquery-1.7.min.js"></script>
+ <script>
+ //Inisiasi awal penggunaan jQuery
+ $(document).ready(function(){
+  //Pertama sembunyikan elemen class detail
+        $('.detail').hide();        
+
+  //Ketika elemen class tampil di klik maka elemen class detail tampil
+        $('.tampil').click(function(){
+   $('.detail').show();
+        });
+
+  //Ketika elemen class sembunyi di klik maka elemen class detail sembunyi
+        $('.sembunyi').click(function(){
+   //Sembunyikan elemen class detail
+   $('.detail').hide();        
+        });
+ });
+ </script>
 	
 </head>
 <body>
@@ -93,8 +113,45 @@
 <section class="services py-5" id="furniture">
 	<div class="container py-lg-3">
 		<h3 class="heading mb-5 text-center">Hasil Diagnosa</h3>
+		<div class="x_content" style="text-align: center;">
+                <img src="<?php echo base_url();?>Gambar/hd5.gif" class="img-fluid" alt="hd" height="400px" />
+              </div>
+              <br>
 
-		<h5 class="heading">Gejala Dipilih</h5><br>
+		
+
+        
+	            <?php
+	            foreach ($kemungkinan_penyakit_yang_diderita as $key => $value) {
+	            ?>
+	            <h5 class="heading text-center">Dari hasil analisa yang didapat, kemungkinan penyakit yang anda derita adalah <b><?php echo $value['penyakit']; ?></b> dengan persentase sebesar <b name="persen[]"><?php echo $value['persentase']; ?>%</b>. Detail penyakit dan solusi pertama agar tidak semakin parah :</h5><br>
+	            	<div class="form-group row">
+            <label class="col-sm-3 col-form-label"> Detail Penyakit </label>
+            <div class="col-sm-8">
+              <textarea rows="5" cols="40" name="detail" class="form-control" placeholder="Detail Penyakit" readonly><?php echo $value['detail']; ?></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"> Solusi Penyakit </label>
+            <div class="col-sm-8">
+              <textarea rows="5" cols="40" name="solusi" class="form-control" placeholder="Solusi Penyakit" readonly><?php echo $value['solusi']; ?></textarea>
+            </div>
+          </div>
+	            <?php
+	            }
+	            ?>
+            </tbody>
+        </table>
+        <br><h5 class="heading text-center">Semakin besar hasil persentase yang didapat, semakin besar pula kemungkinan anda menderita penyakit tersebut. Jadi jangan menunda untuk berkonsultasi langsung ke pakarnya agar dapat segera diketahui, dicegah, dan diobati. Detail analisa penyakit dapat dilihat dengan klik button dibawah ini :</h5><br>
+
+
+							<div class="agileinfo_mail_grid_right submit-buttons text-center">
+			<input type="submit" class="tampil" value="Tampil"/>
+<input type="submit" class="sembunyi" value="Sembunyi"/>
+		</div><br>
+        
+ <div class="detail">
+  <h5 class="heading">Gejala Dipilih</h5><br>
 		<table class="table table-striped table-bordered data">
             <thead>
                 <tr class="bg-group" align="center">
@@ -177,40 +234,10 @@
 	            ?>
             </tbody>
         </table>
-
-        <h5 class="heading">Anda Kemungkinan Menderita Penyakit :</h5><br>
-		<table class="table table-striped table-bordered data">
-            <thead>
-                <tr class="bg-group" align="center">
-            	    <th width="4%">NO</th>
-                	<th width="18%">Penyakit</th>
-                	<th width="30%">Detail</th>
-                	<th width="30%">Solusi</th>
-                	<th width="18%">Persentase (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-	            <?php 
-	            $i=1;
-	            foreach ($kemungkinan_penyakit_yang_diderita as $key => $value) {
-	            ?>
-	                <tr>
-	            	    <td align="center"><?php echo $i; ?></td>
-	            	    <td align="center"><?php echo $value['penyakit']; ?></td>
-	            	    <td align="center"><?php echo $value['detail']; ?></td>
-	            	    <td align="center"><?php echo $value['solusi']; ?></td>
-	                	<td align="center" name="persen[]"><?php echo $value['persentase']; ?></td>
-	                </tr>
-	            <?php
-	            $i++;
-	            }
-	            ?>
-            </tbody>
-        </table>
-        <div class="agileinfo_mail_grid_right submit-buttons text-center">
-			<!-- <input type="submit" value="PDF"></input> -->
-			<a href="<?php echo base_url(). 'Welcome/cetakKonsultasi'; ?>"> PDF </a>
-		</div>
+ </div>
+        <!-- <div class="agileinfo_mail_grid_right submit-buttons text-center">
+			<input type="submit" value="PDF"></input>
+		</div> -->
 	</div>
 </section>
 <!-- //services -->

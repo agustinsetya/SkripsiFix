@@ -42,7 +42,7 @@
               </div> -->
 
               <div class="x_content" style="text-align: center;">
-                <img src="<?php echo base_url();?>Gambar/hd2.gif" class="img-fluid" alt="hd" height="400px" />
+                <img src="<?php echo base_url();?>Gambar/hd.gif" class="img-fluid" alt="hd" height="400px" />
               </div>
               <br><br>
               
@@ -93,12 +93,8 @@
                         <div class="panel-body">
                           <h3 class="pink"><i class="fas fa-chalkboard-teacher"></i> Helpdesc</h3>
 
-                          <p>Informasi mengenai cara mengoperasikan sistem informasi ini :</p>
-                          <p><a href="<?php echo base_url();?>Home"><i class="fa fa-home"></i> Menu Home</a></p>
-                          <p><a href="<?php echo base_url();?>Users"><i class="fa fa-user-md"></i> Menu User</a></p>
-                          <p><a href="<?php echo base_url();?>Gejala"><i class="fa fa-wpforms"></i> Menu Data Gejala </a></p>
-                          <p><a href="<?php echo base_url();?>Gejala"><i class="fa fa-desktop"></i> Menu Penyakit </a></p>
-                          <p><a href="<?php echo base_url();?>Pemeriksaan"><i class="fa fa-stethoscope"></i> Data Hasil Pemeriksaan </a></p>
+                          <p>Anda bingung dalam mengoperasikan sistem ini ? Anda bisa klik link dibawah ini untuk melihat tutorialnya :</p>
+                          <p><a href="<?php echo base_url();?>Home"><i class="fa fa-book-reader"></i> Lihat Petunjuk Penggunaan</a></p>
                           <br />
                         </div>
                       </section>

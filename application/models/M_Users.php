@@ -21,12 +21,7 @@ class M_Users extends CI_Model {
 		return $query->result();
 	}
 
-	function inputData($nama,$username,$password,$alamat,$noWa,$level){
-        $hasil=$this->db->query("INSERT INTO users (nama, username, password, alamat, noWa, level) VALUES ('$nama','$username',md5('$password'),'$alamat','$noWa','$level')");
-        return $hasil;
-    }
-
-    public function updateProfile($data){
+	public function updateProfile($data){
 		try{
     		$id_users=$this->session->userdata['id_users'];
 	      	$this->db->where('id_users',$id_users)->limit(1)->update('users', $data);
@@ -39,6 +34,11 @@ class M_Users extends CI_Model {
         $this->db->where('id_users',$id_users);
         $this->db->update('users', $data);
         return TRUE;
+    }
+
+	function inputData($nama,$username,$password,$alamat,$noWa,$level){
+        $hasil=$this->db->query("INSERT INTO users (nama, username, password, alamat, noWa, level) VALUES ('$nama','$username',md5('$password'),'$alamat','$noWa','$level')");
+        return $hasil;
     }
 
 	function hapus($where,$table){

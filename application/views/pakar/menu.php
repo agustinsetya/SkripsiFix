@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assetsDatatables/media/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assetsDatatables/media/css/dataTables.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assetsDatatables/datatables.min.css"/>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
     
     <!-- Custom Theme Style -->

@@ -5,8 +5,7 @@
         <div class="x_title">
           <h3>DATA USER</h3>
           <div class="clearfix"></div>
-        </div>
-        <div class="pull-right"><a class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal_add_new"><span class="glyphicon glyphicon-plus"></span> Add New</a></div><br><br>
+        </div><br>
 
         <?php if ($this->session->flashdata('success')) {?>
           <div class="alert alert-success alert-dismissible" role="alert">
@@ -35,7 +34,7 @@
 
         <?php foreach($user as $key) { ?>
 
-          <?php echo form_open_multipart("Users/updateProfile"); ?>
+          <?php echo form_open_multipart("Pakar/updateProfile"); ?>
 
           <div class="form-group row">
             <label for="username" class="col-sm-3 col-form-label" > Username </label>
@@ -101,7 +100,7 @@
                   <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                   <h4 class="modal-title">Ubah Password</h4>
               </div>
-              <form class="form-horizontal" action="<?php echo base_url('Users/ubahpass')?>" method="post" enctype="multipart/form-data" role="form">
+              <form class="form-horizontal" action="<?php echo base_url('Pakar/ubahpass')?>" method="post" enctype="multipart/form-data" role="form">
                 <div class="modal-body">
                         <div class="form-group">
                             <label class="col-lg-2 col-sm-2 control-label">Password</label>

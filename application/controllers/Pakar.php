@@ -115,5 +115,32 @@ class Pakar extends CI_Controller {
 		$this->session->set_flashdata('success','Data Kasus Berhasil Dihapus dari Kasus Revisi');
 		redirect('Pakar/DataPemeriksaanRevisi');
 	}
+
+	public function editProfil(){
+		$data['user']= $this->M_Pakar->getUserId();
+		$data['page']='editProfile.php';
+		$this->load->view('pakar/menu',$data);
+	}
+
+	public function updateProfile()
+	{
+		$data['username'] = set_value('username');
+	    $data['nama'] = set_value('nama');
+	    $data['alamat'] = set_value('alamat');
+	    $data['noWa'] = set_value('noWa');
+	    $this->session->set_userdata($data);
+	    $this->M_Pakar->updateProfile($data); //memasukan data ke database
+	    $this->session->set_flashdata('success','Profile Berhasil Diubah');
+	    redirect('Pakar/editProfil'); //mengalihkan halaman
+	}
+
+	function ubahpass(){
+        $data = array(
+            'password'		=>md5($this->input->post('password'))
+        );
+        $this->M_Pakar->ubahpassword($data);
+        $this->session->set_userdata($data);
+        redirect('Pakar/editProfil');
+    }
 }
 ?>

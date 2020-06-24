@@ -123,4 +123,27 @@ class M_Pakar extends CI_Model {
 		//insert_batch merupakan fungsi untuk multiple insert
 		$this->db->insert_batch('detail_kasus', $result);
 	}
+
+	public function getUserId()
+	{
+		$id_users=$this->session->userdata['id_users'];
+		$level=$this->session->userdata['level'];
+		$query = $this->db->query("Select * from users where id_users='$id_users' and level='$level'");
+		return $query->result();
+	}
+
+	public function updateProfile($data){
+		try{
+    		$id_users=$this->session->userdata['id_users'];
+	      	$this->db->where('id_users',$id_users)->limit(1)->update('users', $data);
+	      	return true;
+	    }catch(Exception $e){}
+	}
+
+	function ubahpassword($data){
+		$id_users=$this->session->userdata['id_users'];
+        $this->db->where('id_users',$id_users);
+        $this->db->update('users', $data);
+        return TRUE;
+    }
 }
